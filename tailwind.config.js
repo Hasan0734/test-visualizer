@@ -12,7 +12,7 @@ module.exports = {
       playfair: ['"Playfair Display"'],
       lexend: ['"Lexend"'],
       roboto: ['"Roboto"'],
-      inter:['"Inter']
+      inter:['"Inter"']
     },
 
     extend: {

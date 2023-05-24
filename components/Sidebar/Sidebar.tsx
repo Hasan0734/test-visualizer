@@ -14,7 +14,9 @@ const Sidebar = () => {
 
             <form action="">
                 <h5 className='filter-list  px-4 py-4'>Filter</h5>
-                <button type='reset' onClick={() => dispatch(setFilterCategory([]))} className='filter-list  mt-4 px-4'>View all</button>
+                <button type='reset'
+                 onClick={() => dispatch(setFilterCategory([]))} 
+                 className='filter-list  mt-4 px-4'>Unselect</button>
                 <ul className='mt-4'>
                     {categories.map((category: any, i: number) => <CategoryItem
                         key={++i} category={category} />)}

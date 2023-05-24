@@ -9,9 +9,15 @@ import { Check } from 'react-feather';
 //     labelClass: string
 // }
 
-const Checkbox = ({ title = "",defaultChecked, name = "", container = 'gap-3', labelClass, handleOnChange, ...attribute }: any) => {
+const Checkbox = ({ title = "", defaultChecked, name = "", container = 'gap-3', labelClass, handleOnChange, ...attribute }: any) => {
 
-    
+
+    const handleKeyDown = (e:any) => {
+        if (e.key === 'Enter') {
+            handleOnChange(e.target.value)
+        }
+      }
+
     return (
         <>
             <label
@@ -19,10 +25,11 @@ const Checkbox = ({ title = "",defaultChecked, name = "", container = 'gap-3', l
                 htmlFor={name}>
                 <div>
                     <input
+                        onKeyPress={handleKeyDown}
                         onChange={(e) => handleOnChange(e.target.value)}
                         {...attribute}
-                        defaultChecked={defaultChecked}
-                        
+                        checked={defaultChecked}
+
                         type="checkbox"
                         className={`peer overflow-hidden appearance-none rounded-sm 
                      w-[17px] h-[17px] border border-black

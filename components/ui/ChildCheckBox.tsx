@@ -3,6 +3,7 @@ import Checkbox from './CheckBox';
 import slugify from 'slugify';
 
 const ChildCheckBox = ({  childData, handleOnChange, device, defaultSelected }: any) => {
+    
 
     return (
         <>

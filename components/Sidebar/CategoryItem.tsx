@@ -17,6 +17,7 @@ const CategoryItem = ({ category, setCategoryID }: any) => {
 
 
     const handleOnChange = (ID:number ) => {
+        window.scrollTo(0, 700)
         if(subcategory.includes(Number(ID))){
             const filter = subcategory.filter((cate:number) => cate !== Number(ID))
             dispatch(setFilterCategory(filter))
@@ -25,6 +26,8 @@ const CategoryItem = ({ category, setCategoryID }: any) => {
         }
 
     }
+
+
 
     return (
         <>

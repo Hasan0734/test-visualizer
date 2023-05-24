@@ -56,7 +56,7 @@ body {
     @apply bg-white shadow-[0px_6px_18px_rgba(0,0,0,0.13)]
   }
   .card-image{
-    @apply h-full xs:max-h-[164px] sm:max-h-[289px] w-full
+    @apply h-full xs:max-h-[164px] sm:max-h-[250px] md:max-h-[200px] xl:max-h-[289px] w-full
   }
   .card-btn{
     @apply font-lexend font-normal  text-black text-[11px] leading-4 px-1.5 sm:px-2.5 py-1 sm:py-1

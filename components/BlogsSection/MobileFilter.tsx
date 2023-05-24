@@ -27,9 +27,11 @@ const MobileFilter = () => {
 
     const handleApply = () => {
         dispatch(setFilterCategory(selected))
+        setToggle(false)
     }
     const handleClear = () => {
         dispatch(setFilterCategory(selected))
+        setToggle(false)
     }
 
 

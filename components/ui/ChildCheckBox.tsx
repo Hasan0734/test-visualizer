@@ -1,20 +1,12 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import Checkbox from './CheckBox';
 import slugify from 'slugify';
 
-const ChildCheckBox = ({ childRef, toggle, childData, handleOnChange, device }: any) => {
+const ChildCheckBox = ({  childData, handleOnChange, device }: any) => {
 
-    const isOpen =  toggle ? 'visible opacity-100' : 'invisible opacity-0'
-
-    console.log({isOpen})
-    
     return (
         <>
-            <ul
-                ref={childRef}
-                className={`px-4  transition-all duration-500 ${isOpen}`}
-                style={{ height: toggle ? `${childRef.current?.scrollHeight}px` : '0px' }}
-            >
+          
                 {childData?.map((child: any, i: number) => <li key={++i} className='py-2'>
                     <Checkbox
                         title={child.name}
@@ -26,7 +18,7 @@ const ChildCheckBox = ({ childRef, toggle, childData, handleOnChange, device }: 
                     />
                 </li>)}
 
-            </ul>
+          
         </>
     );
 };

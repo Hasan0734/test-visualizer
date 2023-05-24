@@ -14,13 +14,19 @@ const FilterItem = ({ category, handleOnChange }: any) => {
                     <span>{category.name}</span>
                     <PlusMinus toggle={openChild} />
                 </button>
-                <ChildCheckBox
-                    handleOnChange={handleOnChange}
-                    toggle={openChild}
-                    childRef={childRef}
-                    childData={category.subcategories}
-                    device={'small'}
-                />
+                <ul
+                    ref={childRef}
+                    className={`px-4  transition-all duration-500 ${openChild ? 'block' : 'hidden'}`}
+                   
+                >
+                    <ChildCheckBox
+                        handleOnChange={handleOnChange}
+                        toggle={openChild}
+                        childRef={childRef}
+                        childData={category.subcategories}
+                        device={'small'}
+                    />
+                </ul>
             </li>
         </>
     );

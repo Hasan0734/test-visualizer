@@ -34,14 +34,23 @@ const CategoryItem = ({ category, setCategoryID }: any) => {
                     <span>{category.name}</span>
                     <PlusMinus toggle={openChild} />
                 </button>
-                {category?.subcategories?.length > 0 && <ChildCheckBox
+                {category?.subcategories?.length > 0 &&
+                 <ul
+                 ref={childRef}
+                 className={`px-4  transition-all duration-500 ${openChild ? 'visible ' : 'invisible opacity-0'}`}
+                 style={{
+                     height: openChild ? `${childRef.current?.scrollHeight}px` : '0px',
+                 }}
+             >
+                <ChildCheckBox
                     childData={category.subcategories}
                     toggle={openChild}
-                    childRef={childRef}
                     handleOnChange={handleOnChange}
                     device={'large'}
 
-                />}
+                />
+                </ul>
+                }
             </li>
         </>
     );

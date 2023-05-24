@@ -9,7 +9,6 @@ const MobileFilter = () => {
     const [toggle, setToggle] = useState(false)
     const { subcategory } = useAppSelector(state => state.categoryFilter)
     const dispatch = useAppDispatch()
-
     const [selected, setSelected]: any = useState(subcategory)
 
     const handleToggle = () => {
@@ -30,13 +29,13 @@ const MobileFilter = () => {
         setToggle(false)
     }
     const handleClear = () => {
-        dispatch(setFilterCategory(selected))
-        setToggle(false)
+        dispatch(setFilterCategory([]))
+        setSelected([])
     }
 
 
     return (
-        <div className='relative block md:hidden'>
+        <div className='relative block md:hidden w-full'>
             <div>
                 <h2 className='font-dmsans font-bold text-[25px] text-black'>See all stories</h2>
                 <div className='mt-4 mb-10'>
@@ -49,7 +48,7 @@ const MobileFilter = () => {
                 </div>
             </div>
             <div className={` ${toggle ? 'block' : 'hidden'}`}>
-                <div className='fixed inset-0 bg-white z-10  h-screen' >
+                <form className='fixed inset-0 bg-white z-10  h-screen' >
 
                     {/* header */}
                     <div className='relative bg-secondary2 py-5 flex items-center justify-end gap-20 px-6'>
@@ -72,7 +71,11 @@ const MobileFilter = () => {
                             <div>
                                 <h3 className='font-dmsans font-bold text-sm text-black3 border-b-2 py-2.5'>Filter by:</h3>
                                 <ul className=''>
-                                    {categories.map((category: { id: number, name: string }, i: number) => <FilterItem handleOnChange={handleOnChange} category={category} key={++i} />)}
+                                    {categories.map((category: { id: number, name: string }, i: number) => <FilterItem 
+                                    handleOnChange={handleOnChange} 
+                                    category={category} key={++i} 
+                                    selected={selected}
+                                    />)}
                                 </ul>
 
                             </div>
@@ -82,14 +85,14 @@ const MobileFilter = () => {
                     {/* apply filter */}
 
                     <div className='mfilter-apply-container absolute left-0 right-0 bottom-0 px-6 py-3 flex items-center justify-between'>
-                        <button onClick={handleClear} className=' px-6 py-1.5 text-black font-dmsans text-sm font-medium rounded-sm'>
+                        <button type='reset' onClick={handleClear} className=' px-6 py-1.5 text-black font-dmsans text-sm font-medium rounded-sm'>
                             Clear
                         </button>
-                        <button onClick={handleApply} className='bg-secondary px-6 py-1.5 text-white font-dmsans text-sm font-medium uppercase rounded-sm'>
+                        <button type='button' onClick={handleApply} className='bg-secondary px-6 py-1.5 text-white font-dmsans text-sm font-medium uppercase rounded-sm'>
                             Apply
                         </button>
                     </div>
-                </div>
+                </form>
             </div>
         </div>
     );

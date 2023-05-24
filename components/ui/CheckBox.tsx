@@ -9,7 +9,7 @@ import { Check } from 'react-feather';
 //     labelClass: string
 // }
 
-const Checkbox = ({ title = "", name = "", container = 'gap-3', labelClass, handleOnChange, ...attribute }: any) => {
+const Checkbox = ({ title = "",defaultChecked, name = "", container = 'gap-3', labelClass, handleOnChange, ...attribute }: any) => {
 
     
     return (
@@ -21,6 +21,7 @@ const Checkbox = ({ title = "", name = "", container = 'gap-3', labelClass, hand
                     <input
                         onChange={(e) => handleOnChange(e.target.value)}
                         {...attribute}
+                        defaultChecked={defaultChecked}
                         
                         type="checkbox"
                         className={`peer overflow-hidden appearance-none rounded-sm 

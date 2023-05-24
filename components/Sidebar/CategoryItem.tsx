@@ -47,7 +47,7 @@ const CategoryItem = ({ category, setCategoryID }: any) => {
                     toggle={openChild}
                     handleOnChange={handleOnChange}
                     device={'large'}
-
+                    defaultSelected={subcategory}
                 />
                 </ul>
                 }

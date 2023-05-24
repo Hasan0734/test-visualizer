@@ -2,7 +2,7 @@ import React, { useRef } from 'react';
 import Checkbox from './CheckBox';
 import slugify from 'slugify';
 
-const ChildCheckBox = ({  childData, handleOnChange, device }: any) => {
+const ChildCheckBox = ({  childData, handleOnChange, device, defaultSelected }: any) => {
 
     return (
         <>
@@ -15,6 +15,7 @@ const ChildCheckBox = ({  childData, handleOnChange, device }: any) => {
                         labelClass={'line-clamp-1'}
                         handleOnChange={handleOnChange}
                         value={child._id}
+                        defaultChecked={defaultSelected.includes(child._id) ? true : false}
                     />
                 </li>)}
 

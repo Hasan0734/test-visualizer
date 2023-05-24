@@ -8,6 +8,7 @@ import React, { useEffect } from 'react';
 import { useAppDispatch } from '@/app/hooks';
 import { setBlogs } from '@/features/blogs/blogSlice';
 import { setCategories } from '@/features/categories/categoriesSlice';
+import HeroSection from '@/components/HeroSection/HeroSection';
 
 
 export default function Home({ blogs, categories }:any) {
@@ -20,9 +21,9 @@ export default function Home({ blogs, categories }:any) {
   return (
     <Layout>
 
-      {/* <HeroSection />
-      <BlogsSection/>
-      <Inspiring /> */}
+      <HeroSection />
+      {/* <BlogsSection/> */}
+      {/* <Inspiring /> */}
       <h1>Helo wrold</h1>
     </Layout>
   )

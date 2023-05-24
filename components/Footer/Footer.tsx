@@ -2,7 +2,7 @@ import { footerItems } from '@/utils/data';
 import React from 'react';
 import Item from './Item';
 import Link from 'next/link';
-// import InputText from '../ui/InputText';
+import InputText from '../ui/InputText';
 
 const Footer = () => {
     return (
@@ -49,12 +49,12 @@ const Footer = () => {
                     <div className='order-1 sm:order-2'>
                         <form action="">
                             <div className='flex items-center gap-3'>
-                                {/* <InputText
+                                <InputText
                                     placeholder='Enter your email'
                                     label={false}
                                     name={'email'}
                                     type="text"
-                                /> */}
+                                />
                                 <button
                                     className='
                                  text-white text-base border px-3 py-2.5 font-roboto font-normal'

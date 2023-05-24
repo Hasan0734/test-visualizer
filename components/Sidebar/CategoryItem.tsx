@@ -29,7 +29,7 @@ const CategoryItem = ({ category, setCategoryID }: any) => {
     return (
         <>
             <li className=''>
-                <button onClick={handleSelect}
+                <button type='button' onClick={handleSelect}
                     className={`filter-list py-3 px-4 ${openChild ? 'bg-gray2' : ''} relative`}>
                     <span>{category.name}</span>
                     <PlusMinus toggle={openChild} />

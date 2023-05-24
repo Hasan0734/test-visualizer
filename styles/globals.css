@@ -2,9 +2,129 @@
 @tailwind components;
 @tailwind utilities;
 
+:root {
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 214, 219, 220;
+  --background-end-rgb: 255, 255, 255;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 255, 255, 255;
+    --background-start-rgb: 0, 0, 0;
+    --background-end-rgb: 0, 0, 0;
+  }
+}
+
+body {
+  color: #000000;
+  background: #F4F4F4;
+}
 
 @layer components {
-  .h1{
-    @apply text-3xl font-bold text-center text-red-500
+  
+  .layout{
+    @apply max-w-7xl mx-auto px-6 2xl:px-0
   }
+  .logo {
+    @apply font-lexend font-bold text-xl text-secondary
+  }
+
+  .nav-items {
+    @apply flex items-center gap-x-2
+  }
+
+  .nav-item {
+    @apply font-dmsans font-normal text-base  block
+  }
+
+  .btn {
+    @apply font-dmsans font-normal text-base px-2 py-2 block
+  }
+  .hero-title {
+    @apply font-playfair font-bold text-lg md:text-[55px] block leading-4 md:leading-[60px] text-warning
+  }
+  .hero-text{
+    @apply font-dmsans font-normal text-xsm md:text-[20px] md:leading-7  block text-[#ffffffa6] leading-5
+  }
+
+  .filter-list{
+    @apply font-dmsans font-bold text-base text-black2 flex items-center justify-between w-full
+  }
+  
+  .card{
+    @apply bg-white shadow-[0px_6px_18px_rgba(0,0,0,0.13)]
+  }
+  .card-image{
+    @apply h-full xs:max-h-[164px] sm:max-h-[289px] w-full
+  }
+  .card-btn{
+    @apply font-lexend font-normal  text-black text-[11px] leading-4 px-1.5 sm:px-2.5 py-1 sm:py-1
+  }
+  .card-title{
+    @apply font-dmsans text-black font-bold leading-5 sm:leading-6 text-[12px]  sm:text-[20px]
+  }
+  .card-text{
+    @apply text-[9.8px] sm:text-base font-dmsans text-[#000000a5]
+  }
+
+  .filter-btn-inside{
+    @apply flex items-center justify-center gap-2 w-full py-2 text-center font-dmsans font-bold text-base
+  }
+
+  .mfilter-item{
+    @apply flex items-center justify-between w-full font-dmsans font-normal text-sm text-black3 py-2.5 border-b-2 relative
+  }
+
+  .footer-title{
+    @apply font-roboto text-base font-semibold text-white
+  }
+  .footer-link{
+    @apply font-roboto text-xsm font-semibold text-white
+  }
+  .inspire-title{
+    @apply font-bold text-[14px] md:text-[34px] leading-[18px] md:leading-[44px] font-playfair
+  }
+  .blog-title{
+    @apply text-black text-[36px] md:text-[48px] font-bold leading-[44px] md:leading-[60px] font-playfair
+  }
+  .blog-text{
+    @apply  font-dmsans text-black/80 text-[20px] leading-8 font-normal
+  }
+  .blog-text2{
+    @apply font-dmsans  text-black text-base leading-7
+  }
+
+  .blog-social{
+    @apply bg-gray-200 w-[29.5px] h-[29.5px] flex items-center justify-center rounded-full
+  }
+
+  .subscribe-title{
+    @apply font-playfair text-[48px] leading-[57px]  text-black text-center font-bold
+  }
+}
+
+.hero-section{
+  background: linear-gradient(73.4deg, #391B2F 58.72%, #4E2E43 74.64%, #835E77 107.05%);
+}
+
+.filter-sidebar{
+  background: rgba(255, 255, 255, 0.54);
+  box-shadow: 0px 4px 7px rgba(0, 0, 0, 0.08);
+  min-width: 217px;
+}
+
+.filter-btn{
+  background: rgba(255, 255, 255, 0.54);
+  box-shadow: 0px 4.35539px 7.62194px rgba(0, 0, 0, 0.08);
+}
+
+
+.mfilter-apply-container{
+  background: #F4F4F4;
+  box-shadow: 0px -4px 14px rgba(0, 0, 0, 0.25);
+}
+
+.text-vertical{
+  writing-mode: 'vertical-rl'
 }

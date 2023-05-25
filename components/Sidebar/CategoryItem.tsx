@@ -4,7 +4,7 @@ import ChildCheckBox from '../ui/ChildCheckBox';
 import { useAppDispatch, useAppSelector } from '@/app/hooks';
 import { setFilterCategory } from '@/features/filter/filterSlice';
 
-const CategoryItem = ({ category, blogRef }: any) => {
+const CategoryItem = ({ category }: any) => {
 
     const [openChild, setOpenChild] = useState(false);
     const childRef: any = useRef();
@@ -12,13 +12,6 @@ const CategoryItem = ({ category, blogRef }: any) => {
     const dispatch = useAppDispatch()
 
 
-    useEffect(() => {
-
-       if(subcategory?.length){
-        window.scrollTo(0, blogRef.current.scrollHeight + 120)
-       }
-
-    }, [blogRef.current?.scrollHeight, subcategory])
 
     const handleSelect = () => {
 

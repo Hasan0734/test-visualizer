@@ -24,7 +24,7 @@ const BlogLists = ({blogRef}:any) => {
     }
     
     return (
-        <div ref={blogRef} className='w-full md:w-auto'>
+        <div ref={blogRef} className='w-full md:w-auto self-start'>
             <MobileFilter  />
             <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-7'>
                 {!isLoading ? filterBlogs.map((blog: any, i: number) => (

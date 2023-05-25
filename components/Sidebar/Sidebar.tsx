@@ -4,10 +4,11 @@ import { useAppDispatch, useAppSelector } from '@/app/hooks';
 import { setFilterCategory } from '@/features/filter/filterSlice';
 
 
-const Sidebar = () => {
-    const dispatch = useAppDispatch()
+const Sidebar = ({blogRef}:any) => {
 
+    const dispatch = useAppDispatch()
     const { categories } = useAppSelector(state => state.categories)
+
 
     return (
         <aside className='filter-sidebar py-4 self-start hidden md:block'>
@@ -19,6 +20,7 @@ const Sidebar = () => {
                  className='filter-list  mt-4 px-4'>Unselect</button>
                 <ul className='mt-4'>
                     {categories.map((category: any, i: number) => <CategoryItem
+                    blogRef={blogRef}
                         key={++i} category={category} />)}
                 </ul>
 

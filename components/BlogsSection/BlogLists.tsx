@@ -4,7 +4,7 @@ import MobileFilter from './MobileFilter';
 import SponsorCard from '../ui/SponsorCard';
 import { useAppSelector } from '@/app/hooks';
 
-const BlogLists = () => {
+const BlogLists = ({blogRef}:any) => {
 
     const {blogs, isLoading} = useAppSelector(state => state.blogs);
     
@@ -24,7 +24,7 @@ const BlogLists = () => {
     }
     
     return (
-        <div className='w-full md:w-auto'>
+        <div ref={blogRef} className='w-full md:w-auto'>
             <MobileFilter  />
             <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-7'>
                 {!isLoading ? filterBlogs.map((blog: any, i: number) => (

@@ -1,23 +1,33 @@
-import React, { useState, useRef } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import PlusMinus from '../ui/PlusMinus';
 import ChildCheckBox from '../ui/ChildCheckBox';
 import { useAppDispatch, useAppSelector } from '@/app/hooks';
 import { setFilterCategory } from '@/features/filter/filterSlice';
 
-const CategoryItem = ({ category, setCategoryID }: any) => {
+const CategoryItem = ({ category, blogRef }: any) => {
 
     const [openChild, setOpenChild] = useState(false);
     const childRef: any = useRef();
     const {subcategory} = useAppSelector(state => state.categoryFilter)
     const dispatch = useAppDispatch()
 
+
+    useEffect(() => {
+
+       if(subcategory?.length){
+        window.scrollTo(0, blogRef.current.scrollHeight + 120)
+       }
+
+    }, [blogRef.current?.scrollHeight, subcategory])
+
     const handleSelect = () => {
+
         setOpenChild(!openChild)
     }
-
+  
 
     const handleOnChange = (ID:number ) => {
-        window.scrollTo(0, 700)
+        
         if(subcategory.includes(Number(ID))){
             const filter = subcategory.filter((cate:number) => cate !== Number(ID))
             dispatch(setFilterCategory(filter))

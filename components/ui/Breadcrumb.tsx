@@ -1,3 +1,4 @@
+import moment from 'moment';
 import Link from 'next/link';
 import React from 'react';
 import { ChevronRight } from 'react-feather';
@@ -18,7 +19,7 @@ const Breadcrumb = ({blog}:any) => {
                 </li>
             </ul>
             <p className='hidden sm:block font-dmsans text-sm font-normal text-gray3'>
-                Published 11 January,  2023 by {blog.userInfo.username}</p>
+                Published {moment(new Date()).format('DD MMMM, YYYY') } by {blog.userInfo.username}</p>
         </div>
     );
 };

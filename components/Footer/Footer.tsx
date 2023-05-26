@@ -59,7 +59,7 @@ const Footer = () => {
 
                 <div className='border-y border-white py-16'>
                     <div className='grid grid-cols-1 xs:grid-cols-2 xsm:grid-cols-3 lg:grid-cols-6 gap-10'>
-                        {footerItems?.map((col: any, i:number) => <Item key={++i} col={col} />)}
+                        {footerItems?.map((col, i) => <Item key={++i} col={col} />)}
                     </div>
                 </div>
                 <div className='mt-8'>

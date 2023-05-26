@@ -1,4 +1,13 @@
-export const footerItems = [
+type FooterItemsType = {
+    id: number,
+    title: string,
+    items: {
+        id: number,
+        name: string,
+        link: string
+    }[]
+}[]
+export const footerItems:FooterItemsType = [
     {
         id: 1, title: 'Column One',
         items: [

@@ -4,6 +4,7 @@ import { useAppDispatch, useAppSelector } from '@/app/hooks';
 import { setFilterCategory } from '@/features/filter/filterSlice';
 
 
+
 const Sidebar = ({blogRef}:any) => {
 
     const dispatch = useAppDispatch()
@@ -13,7 +14,7 @@ const Sidebar = ({blogRef}:any) => {
     useEffect(() => {
 
         if(subcategory?.length){
-         window.scrollTo(0, blogRef.current.scrollHeight + 130)
+         window.scrollTo(0, blogRef?.current.scrollHeight + 130)
         }
  
      }, [blogRef.current?.scrollHeight, subcategory])
@@ -28,7 +29,7 @@ const Sidebar = ({blogRef}:any) => {
                  onClick={() => dispatch(setFilterCategory([]))} 
                  className='filter-list  mt-4 px-4'>Unselect</button>
                 <ul className='mt-4'>
-                    {categories.map((category: any, i: number) => <CategoryItem
+                    {categories.map((category, i) => <CategoryItem
                    
                         key={++i} category={category} />)}
                 </ul>

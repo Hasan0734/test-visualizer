@@ -1,3 +1,4 @@
+import { MenuBar } from '@/public/assets/svg';
 import Link from 'next/link';
 import React from 'react';
 
@@ -59,9 +60,7 @@ const Navbar = () => {
                     {/* toggle btn */}
 
                     <button className='p-2'>
-                        <svg xmlns="http://www.w3.org/2000/svg" width={23} height={17} viewBox="0 0 23 17" fill="none">
-                            <path d="M2 2H21M2 8.5H21M2 15H21" stroke="#393939" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
-                        </svg>
+                      <MenuBar/>
                     </button>
                 </div>
             </div>

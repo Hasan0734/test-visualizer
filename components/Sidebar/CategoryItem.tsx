@@ -4,7 +4,19 @@ import ChildCheckBox from '../ui/ChildCheckBox';
 import { useAppDispatch, useAppSelector } from '@/app/hooks';
 import { setFilterCategory } from '@/features/filter/filterSlice';
 
-const CategoryItem = ({ category }: any) => {
+
+type CategoryProps = {
+    category: {
+        _id:number,
+        name:string,
+        subcategories: {
+            _id:number,
+            name:string,
+            category:number
+        }[]
+    }
+}
+const CategoryItem = ({ category }: CategoryProps) => {
 
     const [openChild, setOpenChild] = useState(false);
     const childRef: any = useRef();
@@ -14,13 +26,12 @@ const CategoryItem = ({ category }: any) => {
 
 
     const handleSelect = () => {
-
         setOpenChild(!openChild)
     }
-  
+
 
     const handleOnChange = (ID:number ) => {
-        
+    
         if(subcategory.includes(Number(ID))){
             const filter = subcategory.filter((cate:number) => cate !== Number(ID))
             dispatch(setFilterCategory(filter))
@@ -29,8 +40,6 @@ const CategoryItem = ({ category }: any) => {
         }
 
     }
-
-
 
     return (
         <>

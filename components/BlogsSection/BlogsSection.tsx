@@ -3,7 +3,7 @@ import Sidebar from '../Sidebar/Sidebar';
 import BlogLists from './BlogLists';
 
 const BlogsSection = () => {
-    const blogRef:any = useRef()
+    const blogRef = React.useRef<HTMLDivElement>()
     return (
         <section className='py-10 md:py-28'>
             <div  className='layout flex gap-8'>

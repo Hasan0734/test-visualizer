@@ -2,9 +2,25 @@ import React, { useRef, useState } from 'react';
 import PlusMinus from '../ui/PlusMinus';
 import ChildCheckBox from '../ui/ChildCheckBox';
 
-const FilterItem = ({ category, handleOnChange, selected }: any) => {
+type FilterProps = {
+    category:{
+        _id:number,
+        name:string
+        subcategories:{
+            _id:number,
+            name:string,
+            category:number
+        }[]
+    },
+    handleOnChange:(ID:number) => void,
+    selected:number[]
+}
+
+const FilterItem = ({ category, handleOnChange, selected }: FilterProps) => {
+
     const [openChild, setOpenChild] = useState(false)
     const childRef: any = useRef();
+
 
     return (
         <>

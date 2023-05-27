@@ -6,7 +6,7 @@ const BlogsSection = () => {
     const blogRef = React.useRef<HTMLDivElement>()
     return (
         <section className='py-10 md:py-28'>
-            <div  className='layout flex gap-8'>
+            <div  className='container-layout flex gap-8'>
                 <Sidebar blogRef={blogRef} />
                 <BlogLists  blogRef={blogRef} />
             </div>

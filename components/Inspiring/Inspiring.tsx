@@ -4,7 +4,7 @@ import React from 'react';
 const Inspiring = () => {
     return (
         <section className='bg-pinkdark'>
-            <div className='layout py-10 md:min-h-[322px] flex items-center justify-center'>
+            <div className='container-layout py-10 md:min-h-[322px] flex items-center justify-center'>
                 <div className=''>
                     <h1 className='text-center inspire-title text-white'>Try Visualizer and start your inspiring journey today</h1>
                         <div className='flex justify-center mt-5'>

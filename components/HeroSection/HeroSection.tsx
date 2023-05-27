@@ -3,7 +3,7 @@ import React from 'react';
 const HeroSection = () => {
     return (
         <section className='hero-section h-[272px] md:h-[511px] relative overflow-hidden'>
-            <div className='layout flex items-center h-full'>
+            <div className='container-layout flex items-center h-full'>
                 <div className='max-w-[318px] md:max-w-[834px]'>
                     <h2 className='hero-title'>Networking for Career Success</h2>
                     <p className='hero-text mt-3 md:mt-6'>

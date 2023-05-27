@@ -4,7 +4,7 @@ import InputText from '../ui/InputText';
 const Subscribe = () => {
     return (
         <section className='py-16 hidden md:block'>
-            <div className='layout'>
+            <div className='container-layout'>
                 <div>
                     <h1 className='subscribe-title'>Subscribe to our newsletter</h1>
                     <p className='text-center font-dmsans text-md font-normal text-black mt-5'>&quotStay up-to-date with our latest news and insights by subscribing to our newsletter today!&quot</p>

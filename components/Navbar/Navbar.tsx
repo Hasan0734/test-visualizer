@@ -5,7 +5,7 @@ import React from 'react';
 const Navbar = () => {
     return (
         <nav>
-            <div className='layout'>
+            <div className='container-layout'>
                 <div className='hidden md:flex justify-between items-center py-7'>
                     <div>
                         <h3 className='logo uppercase'>

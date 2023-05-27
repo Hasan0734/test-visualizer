@@ -9,7 +9,7 @@ const Footer = () => {
     return (
         <footer className='bg-oblack pt-16 pb-14'>
 
-            <div className='layout'>
+            <div className='container-layout'>
 
                 <div className='flex md:hidden flex-col sm:flex-row justify-between pb-16 gap-6'>
                     <div className='order-2 sm:order-1'>

@@ -1,14 +1,6 @@
 import React from 'react';
 import { Check } from 'react-feather';
 
-
-// interface proptype {
-//     title: string,
-//     name: string,
-//     container: string,
-//     labelClass: string
-// }
-
 const Checkbox = ({ title = "", defaultChecked, name = "", container = 'gap-3', labelClass, handleOnChange, ...attribute }: any) => {
 
 

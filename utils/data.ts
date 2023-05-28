@@ -7,7 +7,7 @@ type FooterItemsType = {
         link: string
     }[]
 }[]
-export const footerItems:FooterItemsType = [
+export const footerItems: FooterItemsType = [
     {
         id: 1, title: 'Column One',
         items: [
@@ -79,6 +79,9 @@ type DataType = {
     subcategory: number;
     banner: string;
     type: string;
+    published_date: Date;
+    read_time: string,
+    share_post: string
 
 }[]
 
@@ -91,6 +94,9 @@ export const blogs: DataType = [
         subcategory: 1,
         banner: 'https://i.ibb.co/d6My4M4/Image.png',
         type: 'general',
+        published_date: new Date(),
+        read_time: '5 Min',
+        share_post: "Share this title"
     },
     {
         title: 'Exploring the Solar System',
@@ -100,6 +106,9 @@ export const blogs: DataType = [
         subcategory: 4,
         banner: 'https://i.ibb.co/BL868QC/Image.png',
         type: 'general',
+        published_date: new Date(),
+        read_time: '5 Min',
+        share_post: "Share this title"
     },
     {
         title: '10 Tips for Successful Entrepreneurship',
@@ -109,6 +118,9 @@ export const blogs: DataType = [
         subcategory: 7,
         banner: 'https://i.ibb.co/0F5skzc/Image.png',
         type: 'sponsored',
+        published_date: new Date(),
+        read_time: '5 Min',
+        share_post: "Share this title"
     },
     {
         title: '5 Essential Fitness Exercises',
@@ -118,6 +130,9 @@ export const blogs: DataType = [
         subcategory: 10,
         banner: 'https://i.ibb.co/Y8fQX4Y/Image.png',
         type: 'general',
+        published_date: new Date(),
+        read_time: '5 Min',
+        share_post: "Share this title"
     },
     {
         title: 'The Thrill of Football',
@@ -127,6 +142,9 @@ export const blogs: DataType = [
         subcategory: 13,
         banner: 'https://i.ibb.co/Syc7WGn/Image.png',
         type: 'general',
+        published_date: new Date(),
+        read_time: '5 Min',
+        share_post: "Share this title"
     },
     {
         title: 'Web Development Trends for 2023',
@@ -136,6 +154,9 @@ export const blogs: DataType = [
         subcategory: 2,
         banner: 'https://i.ibb.co/3BpBrsN/Image.png',
         type: 'general',
+        published_date: new Date(),
+        read_time: '5 Min',
+        share_post: "Share this title"
     },
     {
         title: 'Exploring the Galaxy',
@@ -145,6 +166,9 @@ export const blogs: DataType = [
         subcategory: 5,
         banner: 'https://i.ibb.co/k1rXMdQ/Image.png',
         type: 'general',
+        published_date: new Date(),
+        read_time: '5 Min',
+        share_post: "Share this title"
     },
     {
         title: 'Mastering SEO Techniques',
@@ -154,6 +178,9 @@ export const blogs: DataType = [
         subcategory: 8,
         banner: 'https://i.ibb.co/X4yFrh1/Image.png',
         type: 'general',
+        published_date: new Date(),
+        read_time: '5 Min',
+        share_post: "Share this title"
     },
     {
         title: 'Delicious Recipes for Desserts',
@@ -163,6 +190,9 @@ export const blogs: DataType = [
         subcategory: 11,
         banner: 'https://i.ibb.co/wwKfMSp/Image.png',
         type: 'general',
+        published_date: new Date(),
+        read_time: '5 Min',
+        share_post: "Share this title"
     },
     {
         title: 'The Art of Landscape Photography',
@@ -172,6 +202,9 @@ export const blogs: DataType = [
         subcategory: 14,
         banner: 'https://i.ibb.co/3BpBrsN/Image.png',
         type: 'general',
+        published_date: new Date(),
+        read_time: '5 Min',
+        share_post: "Share this title"
     },
 ]
 
@@ -362,15 +395,15 @@ export const users = [
 
 function getRandomAvatar() {
     let type = ['men', 'women']
-  
+
     // Generate a random index based on the length of the array
     const randomTypeIndex = Math.floor(Math.random() * type.length)
-  
+
     // Generate random data within [0-50]
     const randomAge = Math.floor(Math.random() * 50)
-  
+
     //Generate random user avatar from randomuser.me
     let avatar = `https://randomuser.me/api/portraits/${type[randomTypeIndex]}/${randomAge}.jpg`
-  
+
     return avatar
-  }
+}

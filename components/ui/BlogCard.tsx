@@ -4,18 +4,24 @@ import React from 'react';
 import { ChevronRight } from 'react-feather';
 import slugify from 'slugify';
 // var slugify = require('slugify')
+
 type DataType = {
-    title: string;
-    content: string;
-    author: number;
-    category: number;
-    subcategory: number;
-    banner: string;
-    type: string;
+    blog: {
+        title: string;
+        content: string;
+        author: number;
+        category: number;
+        subcategory: number;
+        banner: string;
+        type: string;
+        published_date: Date,
+        read_time: string,
+        share_post: string
+    }
 
 }
 
-const BlogCard = ({ blog }: any) => {
+const BlogCard = ({ blog }: DataType) => {
     return (
         <div className='card grid sm:block grid-cols-2 sm:grid-cols-1'>
             <Link href={`/blog/${slugify(blog?.title, '-').toLowerCase()}`}>
@@ -69,7 +75,7 @@ const BlogCard = ({ blog }: any) => {
                         </li>
                         <li>
                             <Link href="/instagram" className='h-4 sm:h-5 w-4 sm:w-5 hover:text-yellow1 text-black'>
-                                <Instagram width={20} height={20}/>
+                                <Instagram width={20} height={20} />
                             </Link>
                         </li>
                     </ul>

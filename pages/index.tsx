@@ -8,20 +8,40 @@ import { useAppDispatch } from '@/app/hooks';
 import { setBlogs } from '@/features/blogs/blogSlice';
 import { setCategories } from '@/features/categories/categoriesSlice';
 import { GetServerSideProps } from 'next/types';
+import { categories } from '@/utils/data';
 
+type hometype = {
+  blogs: {
+    title: string;
+    content: string;
+    author: number;
+    category: number;
+    subcategory: number;
+    banner: string;
+    type: string;
+    published_date: Date;
+    read_time: string,
+    share_post: string
+  }[],
+  categories: {
+    _id: number,
+    name: string,
+  }[]
 
-export default function Home({ blogs, categories }:any) {
+}
+
+export default function Home({ blogs, categories }: hometype) {
   const dispatch = useAppDispatch()
   useEffect(() => {
     dispatch(setBlogs(blogs))
     dispatch(setCategories(categories))
-  },[])
+  }, [])
 
   return (
     <Layout>
 
       <HeroSection />
-      <BlogsSection/>
+      <BlogsSection />
       <Inspiring />
 
     </Layout>

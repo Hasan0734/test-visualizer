@@ -4,17 +4,22 @@ import { ChevronRight } from 'react-feather';
 import slugify from 'slugify';
 // var slugify = require('slugify')
 type DataType = {
-    title: string;
-    content: string;
-    author: number;
-    category: number;
-    subcategory: number;
-    banner: string;
-    type: string;
+    blog: {
+        title: string;
+        content: string;
+        author: number;
+        category: number;
+        subcategory: number;
+        banner: string;
+        type: string;
+        published_date: Date,
+        read_time: string,
+        share_post: string
+    }
 
 }
 
-const SponsorCard = ({ blog }: any) => {
+const SponsorCard = ({ blog }: DataType) => {
     return (
         <div className=' card grid sm:block grid-cols-2 sm:grid-cols-1 overflow-hidden'>
             <Link href={`/blog/${slugify(blog?.title, '-').toLowerCase()}`}>

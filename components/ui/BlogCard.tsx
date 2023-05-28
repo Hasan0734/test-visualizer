@@ -39,7 +39,7 @@ const BlogCard = ({ blog }: DataType) => {
                     <button className='card-btn'>
 
 
-                        5 min read
+                    {blog.share_post} min read
                     </button>
                 </div>
                 <div className='mt-2 sm:mt-5 sm:h-[135px]'>

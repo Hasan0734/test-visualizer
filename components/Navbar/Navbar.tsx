@@ -9,31 +9,35 @@ const Navbar = () => {
                 <div className='hidden md:flex justify-between items-center py-7'>
                     <div>
                         <h3 className='logo uppercase'>
-                            <Link href={'/'}>  
-                            VISUALIZER
+                            <Link href={'/'}>
+                                VISUALIZER
                             </Link>
-                            </h3>
+                        </h3>
                     </div>
 
                     <div className='flex items-center gap-x-5'>
                         <ul className='nav-items'>
                             <li>
-                                <Link className="text-primary text-black px-2 py-1 nav-item" href={'/resume'}>
+                                <Link className="text-primary text-black px-2 py-1 nav-item"
+                                    href={'/resume'}>
                                     Resume
                                 </Link>
                             </li>
                             <li>
-                                <Link className="text-primary text-black px-2 py-1 nav-item" href={'/resume'}>
+                                <Link className="text-primary text-black px-2 py-1 nav-item"
+                                    href={'/blogs'}>
                                     Blog
                                 </Link>
                             </li>
                             <li>
-                                <Link className="text-primary text-black px-2 py-1 nav-item" href={'/resume'}>
+                                <Link className="text-primary text-black px-2 py-1 nav-item"
+                                    href={'/pricing'}>
                                     Pricing
                                 </Link>
                             </li>
                             <li>
-                                <Link className="text-primary text-black px-2 py-1 nav-item" href={'/resume'}>
+                                <Link className="text-primary text-black px-2 py-1 nav-item"
+                                    href={'/about-us'}>
                                     About Us
                                 </Link>
                             </li>
@@ -60,7 +64,7 @@ const Navbar = () => {
                     {/* toggle btn */}
 
                     <button className='p-2'>
-                      <MenuBar/>
+                        <MenuBar />
                     </button>
                 </div>
             </div>

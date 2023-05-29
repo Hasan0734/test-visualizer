@@ -9,6 +9,7 @@ const Checkbox = ({ title = "", defaultChecked, name = "", container = 'gap-3', 
             handleOnChange(e.target.value)
         }
       }
+      
 
     return (
         <>

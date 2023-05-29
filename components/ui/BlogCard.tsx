@@ -16,7 +16,8 @@ type DataType = {
         type: string;
         published_date: Date,
         read_time: string,
-        share_post: string
+        share_post: string,
+       
     }
 
 }
@@ -39,7 +40,7 @@ const BlogCard = ({ blog }: DataType) => {
                     <button className='card-btn'>
 
 
-                    {blog.share_post} min read
+                    {blog.read_time} read
                     </button>
                 </div>
                 <div className='mt-2 sm:mt-5 sm:h-[135px]'>

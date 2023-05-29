@@ -61,7 +61,7 @@ const Breadcrumb = ({ blog }: DataType) => {
                 </li>
             </ul>
             <p className='hidden sm:block font-dmsans text-sm font-normal text-gray3'>
-                Published {moment(blog.published_date).format('DD MMMM, YYYY')} by {blog.userInfo.username}</p>
+                Published {moment(new Date).format('DD MMM, YYYY')} by {blog.userInfo.username}</p>
         </div>
     );
 };
